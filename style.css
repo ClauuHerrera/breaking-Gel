@@ -6,6 +6,7 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+
 }
 
 @font-face {
@@ -103,6 +104,7 @@ header label {
 }
 .jumbotron {
     height: 400px;
+    width: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.562) , rgba(255, 255, 255, 0.5)), url(./assent/gloves-5155220_640.jpg);
     background-size: cover;
     background-position: center;
@@ -145,7 +147,7 @@ header label {
 }
 .list-products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px ,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px ,100%),1fr));
     gap: 25px;
     margin: 25px;
     padding: 30px;
@@ -214,7 +216,7 @@ header label {
     background-color: black;
     margin-top: 30px;
     height: 300px;
-    box-shadow: 5px 8px 12px #fff;
+    box-shadow: 5px 8px 12px gray;
     border-radius: 20px;
 }
 .horario h2 {
@@ -353,7 +355,7 @@ footer {
     text-decoration: none;
     color: #000;
     position: relative;
-    left: 10px;
+    left: 0px;
     top: 5px;
     text-transform: uppercase;
 }
@@ -468,7 +470,7 @@ footer {
         color: #000;
     }
     .envios a {
-        color: beige;
+        color:floralwhite;
     }
     .redes {
         margin: 40px;
@@ -477,7 +479,7 @@ footer {
         display: inline;
         font-size: 40px;
         margin: 20px;
-        color: beige;
+        color: #000;
     }
     .pagos {
         display: inline;
@@ -497,6 +499,82 @@ footer {
     }
 }
 @media only screen and (min-width:360px) and (max-width:600px) {
+    
+    header {
+        width: 360px;
+        position: relative;
+        right: 80px;
+        margin: 0px;
+    }
 
-   
+    .list-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(360px ,100%),1fr));
+        gap: 30px;
+        
+    }
+    .product img {
+        width: 100%;
+        height: 100%;
+        object-fit:contain;
+    }
+    .product {
+        height: 250px;
+        width: auto;
+    }
+    .product p {
+        color:yellow;
+        font-family: kome ;
+        font-size: 30px;
+        text-transform: uppercase;
+        font-weight: 400;
+        position: relative;
+        bottom: 60%;
+        left: 30px;    
+    }
+    .youtube {
+        display: block;
+        margin: 30px;
+        border-radius: 0%;
+        filter:grayscale(0);
+        transition: all 0.3s linear;
+    }
+    .youtube:hover {
+        filter:grayscale(20);
+    }
+    .SobreNosotros {
+        height: 900px;
+    }
+    .contactos .foto {
+        position: relative;
+        right: 60px;
+    }
+    .datos {
+        position: inherit;
+    }
+    .mapa {
+        width:360px;
+    }
+    
+    .envios h4 {
+        font-size: 25px;
+    }
+    .pagos {
+     display: none;
+    }
+    .redes {
+        margin: 20px;
+    }
+    .redes a {
+       display: block;
+    }
+    .termino p {
+        padding: 10px;
+    }
+    .nota {
+        position: relative;
+        left: 0px;
+        top: 0px;
+       
+    }
 }
