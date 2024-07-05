@@ -6,8 +6,11 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-
+    
 }
+html {
+    scroll-behavior: smooth;
+  }
 
 @font-face {
     font-family: query ;
@@ -21,7 +24,6 @@
     font-family: kome ;
     src: url(./fuentes/Komersie.ttf);
 }
-
 
 
 body {
@@ -42,6 +44,46 @@ header {
     z-index: 1000;
     height: 80px;
 }
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    bottom: 40px;
+    right: 20px;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 2px 4px 4px #000;
+    z-index: 999;
+}
+
+.fa-whatsapp {
+    font-size: 60px;
+}
+.float:hover {
+    color: #000;
+}
+.subir {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+    bottom: 110px;
+    right: 20px;
+    border-radius: 50px;
+    color: #816594;
+    text-align: center;
+    box-shadow: 2px 4px 4px #000;
+    z-index: 999;
+}
+.fa-chevron-up {
+    font-size: 60px;
+}
+.subir:hover {
+    color: #000;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -129,6 +171,7 @@ header label {
 .productos {
     background-color: white;
     margin-top: 30px;
+    height: 500px;
 }
 .titulo {
     height: 70px;
@@ -146,18 +189,24 @@ header label {
     box-shadow: 5px 8px 12px #000;
 }
 .list-products {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(350px ,100%),1fr));
-    gap: 25px;
-    margin: 25px;
+    grid-template-columns: repeat(auto-fit,minmax(min(300px ,100%),1fr));
+    gap: 30px;
     padding: 30px;
 }
+
 .product {
     box-shadow: 5px 8px 12px #000;
-    height: 400px;
+    height: 350px;
     
 }
 .product img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     filter: blur(5px);
     transition: all 0.5s linear;
     transition: 0.3s;
@@ -174,7 +223,7 @@ header label {
     font-weight: 400;
     position: relative;
     bottom: 50%;
-    left: 50px;
+    left: 40px;
 }
 .product a {
     text-decoration: none;
@@ -329,6 +378,7 @@ footer {
     color: #000;
     transition:0.3s;
 }
+
 .face:hover {
     color: blue;
     transform: scale(1.3);
@@ -397,7 +447,16 @@ footer {
         font-size: 35px;
 
     }
+    .list-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(min(150px, 100%), 1fr));
+        gap: 16px;
+
+    }
     .product img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
         filter: blur(0px);
         transition: all 0s linear;
         transition: 0.3s;
@@ -498,25 +557,27 @@ footer {
         padding-top: 20px;
     }
 }
-@media only screen and (min-width:360px) and (max-width:600px) {
+
+@media only screen and (min-width:360px) and (max-width: 600px){
     
     header {
-        width: 360px;
+        width: auto;
         position: relative;
         right: 80px;
         margin: 0px;
     }
-
+    .productos {
+        height: 950px;
+    }
     .list-products {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(360px ,100%),1fr));
-        gap: 30px;
-        
+        grid-template-columns: repeat(auto-fit, minmax(min(360px ,100%),1fr));
+
     }
     .product img {
         width: 100%;
         height: 100%;
-        object-fit:contain;
+        object-fit:cover;
     }
     .product {
         height: 250px;
@@ -530,7 +591,7 @@ footer {
         font-weight: 400;
         position: relative;
         bottom: 60%;
-        left: 30px;    
+        left: 40px;    
     }
     .youtube {
         display: block;
@@ -553,7 +614,7 @@ footer {
         position: inherit;
     }
     .mapa {
-        width:360px;
+        width:auto;
     }
     
     .envios h4 {
@@ -575,6 +636,19 @@ footer {
         position: relative;
         left: 0px;
         top: 0px;
-       
+    }
+    .float {
+        height: 50px;
+        width: 50px;
+    }
+    .fa-whatsapp {
+        font-size: 50px;
+    }
+    .subir {
+        height: 50px;
+        width: 50px;
+    }
+    .fa-chevron-up {
+        font-size: 50px;
     }
 }
